@@ -25,12 +25,12 @@
             <div class="col-md-4 form-group mt-3 mt-md-0">
               <input type="tel" class="form-control" name="phone" value="{{ appointment.phone }}" id="phone" placeholder="Your Phone" required="">
             </div>
-          </div>{% if appointment.doctor == "Doctor 1" %}selected{% endif %}
+          </div>
           <div class="row">
             <div class="col-md-4 form-group mt-3">
               <input type="date" name="date" value="{{ appointment.date }} class="form-control datepicker" id="date" placeholder="Appointment Date" required="">
             </div>
-            <div class="col-md-4 form-group mt-3">{% if appointment.doctor == "Doctor 1" %}selected{% endif %}
+            <div class="col-md-4 form-group mt-3">
               <select name="department" value="{{ appointment.department }}" id="department" class="form-select" required="">
                 <option value="">Select Department</option>
                 <option value="Department 1" {% if appointment.department == "Department 1" %}selected{% endif %} >Department 1</option>
@@ -39,7 +39,7 @@
               </select>
             </div>
             <div class="col-md-4 form-group mt-3">
-              <select name="doctor" id="doctor" class="form-select" required="">
+              <select name="doctor" value="{{ appointment.doctor }}" id="doctor" class="form-select" required="">
                 <option value="">Select Doctor</option>
                 <option value="Doctor 1" {% if appointment.doctor == "Doctor 1" %}selected{% endif %}>Doctor 1</option>
                 <option value="Doctor 2" {% if appointment.doctor == "Doctor 2" %}selected{% endif %}>Doctor 2</option>
