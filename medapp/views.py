@@ -2,7 +2,9 @@ from django.contrib.auth import authenticate,login
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.shortcuts import render, redirect,get_object_or_404
-from  medapp.models import *
+
+from medapp.models import Appointment
+
 
 # Create your views here.
 
@@ -129,3 +131,5 @@ def login_view(request):
             messages.error(request, "Invalid login credentials")
 
     return render(request, 'login.html')
+
+
